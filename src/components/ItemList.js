@@ -3,10 +3,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-export default class ItemPreview extends React.Component {
+export default class ItemList extends React.Component {
 
   setCurrent(){
-    this.props.handleChange(this.props.name);
+    this.props.handleChange(this.props.name,"n/a");
   }
 
   render() {
@@ -20,6 +20,6 @@ export default class ItemPreview extends React.Component {
   }
 }
 
-ItemPreview.propTypes = {
+ItemList.propTypes = {
     handleChange: React.PropTypes.func
 };

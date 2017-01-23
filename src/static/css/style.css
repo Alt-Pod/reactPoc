@@ -150,3 +150,37 @@ ul.items-selector li > a{
 #basket:hover{
   box-shadow: 1px 1px 5px;
 }
+
+#basketList.large{
+  display:block;
+  width: 20%;
+  z-index: 50;
+  position:absolute;
+  right:10px;
+  top:150px;
+}
+
+#basketList table{
+  background: rgba(255,255,255,0.9);
+  padding: 20px;
+  border:1px solid #ccc;
+  border-radius:20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  display: -webkit-box;
+  max-width: 200px;
+  display: table;
+  float:right;
+}
+#basketList table tr:last-of-type td{
+  font-weight: bold;
+}
+#basketList table tr:first-of-type td{
+  font-weight:bold;
+  padding:0 20px;
+}
+#basketList table tr td{
+  text-align:center;
+  padding:5px 0;
+}

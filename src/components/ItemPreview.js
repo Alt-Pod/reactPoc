@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import ShoppingBasket from './ShoppingBasket';
 
 export default class ItemPreview extends React.Component {
 
@@ -19,12 +18,12 @@ export default class ItemPreview extends React.Component {
     this.setState({
       nb: this.state.nb + 1
     });
+    this.props.handleChange(this.props.name,this.state.nb + 1);
   }
-
+  // ADD OR SUBSTRACT AN ITEM
   removeItem() {
-    this.setState({
-      nb: this.state.nb - 1
-    });
+    if((this.state.nb - 1) < 0){this.setState({ nb: 0 });this.props.handleChange(this.props.name,0);}
+    else{this.setState({ nb: this.state.nb - 1 });this.props.handleChange(this.props.name,this.state.nb - 1);}
   }
   
   render() {
@@ -35,8 +34,11 @@ export default class ItemPreview extends React.Component {
             <p>{this.props.price} $</p>
             <span>{this.props.discount == 1 ? '*three for the price of two' :  ''}</span>
             <p><i>Number : {this.state.nb}</i> <button onClick={this.addItem.bind(this)}>+</button> <button onClick={this.removeItem.bind(this)}>-</button></p>
-            <ShoppingBasket name={this.state.item} nb={this.state.nb}/>
           </div>
     );
   }
 }
+
+ItemPreview.propTypes = {
+    handleChange: React.PropTypes.func
+};
