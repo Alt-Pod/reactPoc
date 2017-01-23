@@ -9,9 +9,11 @@ npm install express@4.14.x react@15.3.x react-dom@15.3.x react-router@2.6.x
 npm install --save-dev webpack@1.13.x babel-loader@6.2.x http-server@0.9.x
 
 <b>BUNDLE</b>
+
 NODE_ENV=production node_modules/.bin/webpack -p
 
 <b>START APP</b>
+
 node_modules/.bin/http-server src/static
 
 No Redux
